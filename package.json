@@ -1,7 +1,8 @@
 {
   "name": "sui",
-  "version": "0.0.0",
-  "description": "screenshot-url-imgur",
+  "version": "0.0.1",
+  "description": "screenshot-url-imgur-browser",
+  "bin": { "usib": "./lib/usib.js" },
   "main": "index.js",
   "dependencies": {
     "imgur-node-api": "~0.0.2",
@@ -9,13 +10,13 @@
     "cli-color": "~0.2.2"
   },
   "devDependencies": {},
-  "repository": "",
+  "repository": "git@github.com:fraserxu/usib.git",
   "keywords": [
     "screenshot",
     "url",
     "imgur",
     "node"
   ],
-  "author": "fraserxu",
+  "author": "Fraser Xu <xvfeng123@gmail.com> (http://xvfeng.me)",
   "license": "BSD"
 }
