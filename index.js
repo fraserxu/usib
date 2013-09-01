@@ -149,10 +149,14 @@ if (argslen) {
     if(argslen >= 2) var imgPath = args[2] || './usib.png';
     if(argslen >= 3) var opts = args[3] || {};
     console.log(clc.green('Tring to capture the page...'));
+    console.log('url', url);
+    console.log('imgPath', imgPath);
+    console.log('opts', opts);
     usib.capture(url, imgPath, opts, function(imgPath) {
       console.log(clc.green('Saved img to %s', imgPath));
-      usib.upload(imgPath, function(url) {
-        child = exec('open ' + url, function(error, stdout, stderr) {
+      usib.upload(imgPath, function(link) {
+        console.log(link);
+        child = exec('open ' + link, function(error, stdout, stderr) {
           if(error) return console.log(clc.red(error));
         });
       });
