@@ -39,7 +39,6 @@ Usib.prototype.getKey = function() {
   return fs.readFileSync(this.keyloc, 'utf8').replace(/[\n\r\t\s]/gm, '');
 }
 
-// Set an API key
 /**
  * Set an API Key
  * @param {string} key imgur key
