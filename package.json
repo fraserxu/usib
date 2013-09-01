@@ -1,0 +1,21 @@
+{
+  "name": "sui",
+  "version": "0.0.0",
+  "description": "screenshot-url-imgur",
+  "main": "index.js",
+  "dependencies": {
+    "imgur-node-api": "~0.0.2",
+    "url-to-screenshot": "~0.4.1",
+    "cli-color": "~0.2.2"
+  },
+  "devDependencies": {},
+  "repository": "",
+  "keywords": [
+    "screenshot",
+    "url",
+    "imgur",
+    "node"
+  ],
+  "author": "fraserxu",
+  "license": "BSD"
+}
