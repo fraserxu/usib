@@ -11,7 +11,9 @@
     "url-to-screenshot": "~0.4.1",
     "cli-color": "~0.2.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "~1.0.4"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:fraserxu/usib.git"
@@ -23,14 +25,18 @@
     "node",
     "cli"
   ],
-  "author": "Fraser Xu <xvfeng123@gmail.com> (http://xvfeng.me)",
-  "license": "BSD",
+  "author": {
+    "name": "Fraser Xu",
+    "email": "xvfeng123@gmail.com",
+    "url": "http://xvfeng.me" 
+  },
+  "license": "MIT",
   "readmeFilename": "readme.md",
   "gitHead": "652458573ab473eae3f1fd75e6e8e3bb9538035f",
   "bugs": {
     "url": "https://github.com/fraserxu/usib/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape ./test/index.js"
   }
 }
