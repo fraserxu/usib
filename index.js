@@ -8,7 +8,7 @@ var imgur = require('imgur-node-api'),
     exec = require('child_process').exec,
     clc = require('cli-color'),
     fs = require('fs'),
-    path = require('path')
+    path = require('path'),
     child;
 
 var args = process.argv.slice(2),
