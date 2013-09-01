@@ -20,7 +20,8 @@
     "screenshot",
     "url",
     "imgur",
-    "node"
+    "node",
+    "cli"
   ],
   "author": "Fraser Xu <xvfeng123@gmail.com> (http://xvfeng.me)",
   "license": "BSD",
@@ -28,8 +29,5 @@
   "gitHead": "652458573ab473eae3f1fd75e6e8e3bb9538035f",
   "bugs": {
     "url": "https://github.com/fraserxu/usib/issues"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

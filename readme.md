@@ -1,13 +1,34 @@
 ## url-screenshot-imgur-browser
-Add a url, take a screenshot, upload to imgur, and open in the browser
+A command line tool to **Add a url, take a screenshot, upload to imgur, and open in the browser.**
 
 ![Hi, I'm caonima](https://raw.github.com/fraserxu/usib/master/caonima.jpg)
 
-### Usage:
-```
-$ npm install
-$ node index.js URL
-```
+
+### Installation
+
+    npm install -g usib
+
+
+### Command-line Usage:
+
+**You must set an API key before CLI use; get one at http://imgur.com/register/api_anon**
+
+Set your API key once and forget it (saved to ~/.imgurkey)
+
+    usib -k aCs53GSs4tga0ikp
+
+Upload a local image
+
+    usib -u caonima.jpg
+
+Capture a page with given url
+
+    usib -c http://xvfeng.me
+
+Capture and Upload and Open in a browser
+
+    usib -cu http://xvfeng.me
+
 
 ### Requirements
 * [phantomjs](http://phantomjs.org/download.html) `brew update && brew install phantomjs`
