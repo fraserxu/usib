@@ -1,6 +1,6 @@
 ## url-screenshot-imgur-browser
 
-[![build status](https://secure.travis-ci.org/fraserxu/usib.png)](http://travis-ci.org/fraserxu/usib)
+[![Build Status](https://travis-ci.org/fraserxu/usib.png?branch=master)](https://travis-ci.org/fraserxu/usib)
 
 A command line tool to **Add a url, take a screenshot, upload to imgur, and open in the browser.**
 
