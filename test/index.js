@@ -15,8 +15,9 @@ test('A usib instance', function(t) {
     t.equal(typeof usib.setKey, 'function', 'has setKey method.');
     t.equal(typeof usib.upload, 'function', 'has upload method.');
     t.equal(typeof usib.capture, 'function', 'has capture method.');
-    child = exec('rm ' + usib.keyloc);
-    t.end();
+    child = exec('rm ' + usib.keyloc, function() {
+        t.end();
+    });
 });
 
 test('setKey and getKey', function(t) {
@@ -24,9 +25,9 @@ test('setKey and getKey', function(t) {
     var usib = new Usib('cca0e9d41a2d7c7');
     t.equal(usib.getKey(), 'cca0e9d41a2d7c7', 'can set a key');
     child = exec('rm ' + usib.keyloc, function(error, stdout, stderr) {
-        t.equal(usib.getKey(), 'false', 'return false when without setting key');
+        t.false(usib.getKey(), 'getKey return false when without setting key');
+        t.end();
     });
-    t.end();
 });
 
 test('capture', function(t) {
@@ -42,8 +43,10 @@ test('capture', function(t) {
 test('upload', function(t) {
     var usib = new Usib('cca0e9d41a2d7c7');
     var file = './usib.png';
-    usib.upload(file);
-    t.end();
+    usib.upload(file, function(url) {
+        t.notEqual(url, undefined, 'should return a link');
+        t.end();
+    });
 });
 
 test('capture and upload', function(t) {
@@ -54,8 +57,9 @@ test('capture and upload', function(t) {
     usib.capture(url, imgPath, opts, function(imgPath) {
         usib.upload(imgPath, function(url) {
             t.notEqual(url, undefined, 'should return a link');
+            child = exec('rm ' + usib.keyloc, function() {
+                t.end();
+            });
         });
     });
-    child = exec('rm ' + usib.keyloc);
-    t.end();
 })
