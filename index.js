@@ -71,16 +71,16 @@ Usib.prototype.capture = function(url, imgPath, opts, callback) {
 }
 
 /**
- * upload img and open in the browser
+ * upload img
  * @param  {string} file loaction to the image
+ * @return {string} data url
  */
-Usib.prototype.upload = function(file) {
+Usib.prototype.upload = function(file, callback) {
   imgur.setClientID(this.key);
   imgur.upload(file, function(err, res) {
+    if(err) console.log(clc.red(err));
     console.log(clc.green('Your img url is: ' + res.data.link));
-    child = exec('open ' + res.data.link, function(error, stdout, stderr) {
-      if(error) return console.log(clc.red(error));
-    });
+    if (callback) callback(res.data.link);
   });
 }
 
@@ -151,7 +151,11 @@ if (argslen) {
     console.log(clc.green('Tring to capture the page...'));
     usib.capture(url, imgPath, opts, function(imgPath) {
       console.log(clc.green('Saved img to %s', imgPath));
-      usib.upload(imgPath);
+      usib.upload(imgPath, function(url) {
+        child = exec('open ' + url, function(error, stdout, stderr) {
+          if(error) return console.log(clc.red(error));
+        });
+      });
     });
     return;
   }

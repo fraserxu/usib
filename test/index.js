@@ -20,12 +20,12 @@ test('A usib instance', function(t) {
 });
 
 test('setKey and getKey', function(t) {
-    t.skip('setKey and getKey is skipped because has no permission to create file.')
-    // var usib = new Usib('cca0e9d41a2d7c7');
-    // t.equal(usib.getKey(), 'cca0e9d41a2d7c7', 'can set a key');
-    // child = exec('rm ' + usib.keyloc, function(error, stdout, stderr) {
-    //     t.equal(usib.getKey(), 'false', 'return false when without setting key');
-    // });
+    // t.skip('setKey and getKey is skipped because has no permission to create file.')
+    var usib = new Usib('cca0e9d41a2d7c7');
+    t.equal(usib.getKey(), 'cca0e9d41a2d7c7', 'can set a key');
+    child = exec('rm ' + usib.keyloc, function(error, stdout, stderr) {
+        t.equal(usib.getKey(), 'false', 'return false when without setting key');
+    });
     t.end();
 });
 
@@ -38,3 +38,24 @@ test('capture', function(t) {
     });
     t.end();
 });
+
+test('upload', function(t) {
+    var usib = new Usib('cca0e9d41a2d7c7');
+    var file = './usib.png';
+    usib.upload(file);
+    t.end();
+});
+
+test('capture and upload', function(t) {
+    var usib = new Usib('cca0e9d41a2d7c7');
+    var url = 'http://google.com';
+    var imgPath = './usib.png';
+    var opts = {};
+    usib.capture(url, imgPath, opts, function(imgPath) {
+        usib.upload(imgPath, function(url) {
+            t.notEqual(url, undefined, 'should return a link');
+        });
+    });
+    child = exec('rm ' + usib.keyloc);
+    t.end();
+})
