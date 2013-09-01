@@ -1,8 +1,8 @@
 {
-  "name": "sui",
+  "name": "usib",
   "version": "0.0.1",
   "description": "screenshot-url-imgur-browser",
-  "bin": { "usib": "./lib/usib.js" },
+  "bin": { "usib": "./index.js" },
   "main": "index.js",
   "dependencies": {
     "imgur-node-api": "~0.0.2",
