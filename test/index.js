@@ -37,10 +37,3 @@ test('capture', function(t) {
     });
     t.end();
 });
-
-test('upload', function(t) {
-    var usib = new Usib('cca0e9d41a2d7c7');
-    var file = '../caonima.jpg';
-    usib.upload(file);
-    t.end();
-})
