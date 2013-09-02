@@ -132,8 +132,8 @@ if (argslen) {
     }
 
     url = args[1];
-    if(argslen >= 2) var imgPath = args[2] || './usib.png';
-    if(argslen >= 3) var opts = args[3] || {};
+    var imgPath = './usib.png';
+    var opts = {};
     console.log(clc.green('Tring to capture the page...'));
     usib.capture(url, imgPath, opts, function() {
       console.log(clc.green('Saved img to %s', imgPath));
@@ -149,8 +149,8 @@ if (argslen) {
     }
 
     url = args[1];
-    var imgPath = args[2] || './usib.png';
-    var opts = args[3] || {};
+    var imgPath = './usib.png';
+    var opts = {};
     console.log(clc.green('Tring to capture the page...'));
     usib.capture(url, imgPath, opts, function(imgPath) {
       console.log(clc.green('Saved img to %s', imgPath));
