@@ -117,7 +117,10 @@ if (argslen) {
     }
 
     file = args[1];
-    usib.upload(file);
+    console.log('file path is ' + file);
+    usib.upload(file, function(link) {
+      console.log(clc.green('Image upload success to %s', link));
+    });
     return;
   }
 
@@ -152,6 +155,7 @@ if (argslen) {
     usib.capture(url, imgPath, opts, function(imgPath) {
       console.log(clc.green('Saved img to %s', imgPath));
       usib.upload(imgPath, function(link) {
+        console.log(clc.green('Image upload success to %s', link));
         child = exec('open ' + link, function(error, stdout, stderr) {
           if(error) return console.log(clc.red(error));
         });

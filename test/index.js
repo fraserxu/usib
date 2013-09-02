@@ -43,9 +43,12 @@ test('capture', function(t) {
 test('upload', function(t) {
     var usib = new Usib('cca0e9d41a2d7c7');
     var file = './usib.png';
-    usib.upload(file, function(url) {
-        t.notEqual(url, undefined, 'should return a link');
-        t.end();
+    usib.upload(file, function(link) {
+        t.notEqual(link, undefined, 'should return a link');
+        child = exec('open ' + link, function(error, stdout, stderr) {
+          if(error) return console.log(clc.red(error));
+          t.end();
+        });
     });
 });
 
