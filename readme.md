@@ -18,19 +18,19 @@ A command line tool to **Add a url, take a screenshot, upload to imgur, and open
 
 Set your API key once and forget it (saved to ~/.imgurkey)
 
-    usib -k aCs53GSs4tga0ikp
+    node ./cli.js -k aCs53GSs4tga0ikp
 
 Upload a local image
 
-    usib -u caonima.jpg
+    node ./cli.js -u caonima.jpg
 
 Capture a page with given url
 
-    usib -c http://xvfeng.me
+    node ./cli.js -c http://xvfeng.me
 
 Capture and Upload and Open in a browser
 
-    usib -cu http://xvfeng.me
+    node ./cli.js -a http://xvfeng.me
 
 
 ### Requirements

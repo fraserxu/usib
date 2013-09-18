@@ -71,7 +71,6 @@ Usib.prototype.upload = function(file, callback) {
   imgur.setClientID(this.key);
   imgur.upload(file, function(err, res) {
     if(err) console.log(clc.red(err));
-    console.log(clc.green('Your img url is: ' + res.data.link));
     if (callback) callback(res.data.link);
   });
 }

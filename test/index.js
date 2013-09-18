@@ -1,5 +1,5 @@
 var test = require('tape');
-var Usib = require('../index.js');
+var Usib = require('../usib');
 var exec = require('child_process').exec;
 
 test('Usib module', function(t) {
@@ -21,7 +21,6 @@ test('A usib instance', function(t) {
 });
 
 test('setKey and getKey', function(t) {
-    // t.skip('setKey and getKey is skipped because has no permission to create file.')
     var usib = new Usib('cca0e9d41a2d7c7');
     t.equal(usib.getKey(), 'cca0e9d41a2d7c7', 'can set a key');
     child = exec('rm ' + usib.keyloc, function(error, stdout, stderr) {
@@ -32,7 +31,7 @@ test('setKey and getKey', function(t) {
 
 test('capture', function(t) {
     var usib = new Usib('cca0e9d41a2d7c7');
-    var url = 'http://google.com';
+    var url = 'http://xvfeng.me';
     var imgPath = './usib.png';
     usib.capture(url, imgPath, {}, function(data) {
         t.equal(data, imgPath, 'callback argument should be equal to imgPath');
