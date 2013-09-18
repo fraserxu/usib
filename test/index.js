@@ -45,10 +45,7 @@ test('upload', function(t) {
     var file = './usib.png';
     usib.upload(file, function(link) {
         t.notEqual(link, undefined, 'should return a link');
-        child = exec('open ' + link, function(error, stdout, stderr) {
-          if(error) return console.log(clc.red(error));
-          t.end();
-        });
+        t.end();
     });
 });
 
@@ -60,9 +57,7 @@ test('capture and upload', function(t) {
     usib.capture(url, imgPath, opts, function(imgPath) {
         usib.upload(imgPath, function(url) {
             t.notEqual(url, undefined, 'should return a link');
-            child = exec('rm ' + usib.keyloc, function() {
-                t.end();
-            });
+            t.end();
         });
     });
 })
