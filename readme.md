@@ -4,8 +4,6 @@
 
 A command line tool to **Add a url, take a screenshot, upload to imgur, and open in the browser.**
 
-![Hi, I'm caonima](https://raw.github.com/fraserxu/usib/master/caonima.jpg)
-
 
 ### Installation
 
@@ -18,19 +16,19 @@ A command line tool to **Add a url, take a screenshot, upload to imgur, and open
 
 Set your API key once and forget it (saved to ~/.imgurkey)
 
-    node ./cli.js -k aCs53GSs4tga0ikp
+    usib -k aCs53GSs4tga0ikp
 
 Upload a local image
 
-    node ./cli.js -u caonima.jpg
+    usib -u caonima.jpg
 
 Capture a page with given url
 
-    node ./cli.js -c http://xvfeng.me
+    usib -c http://xvfeng.me
 
 Capture and Upload and Open in a browser
 
-    node ./cli.js -a http://xvfeng.me
+    usib -a http://xvfeng.me
 
 
 ### Requirements
